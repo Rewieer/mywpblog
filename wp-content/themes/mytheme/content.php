@@ -12,8 +12,7 @@
     if (is_single()) {
       the_content();
     } else {
-      the_excerpt();
-      echo '<a href="' .get_permalink(). '">Read More</a> <br /><br />';
+      the_content("Read more");
     }
     ?>
   </div>
