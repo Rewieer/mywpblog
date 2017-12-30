@@ -11,19 +11,25 @@
   </head>
   <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: white; border-bottom: 1px solid rgb(240, 240, 240)">
+    <nav class="mytheme-main-navbar navbar navbar-expand-lg navbar-light fixed-top" style="background-color: white; border-bottom: 1px solid rgb(240, 240, 240)">
       <div class="container">
-        <a class="navbar-brand" href="<?php home_url("/"); ?>">Anthony Benkhebbab</a>
+        <a class="navbar-brand" href="<?php echo home_url(); ?>">Anthony Benkhebbab</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-<!--        <div class="collapse navbar-collapse" id="navbarResponsive">-->
-<!--          <ul class="navbar-nav ml-auto">-->
-<!--            <li class="nav-item active">-->
-<!--              <a class="nav-link" href="/">Home</a>-->
-<!--            </li>-->
-<!--          </ul>-->
-<!--        </div>-->
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <?php
+            $item = get_pages();
+            foreach ($item as $page) {
+              $display = '<li class="nav-item active">';
+              $display .= '<a class="nav-link" href="' .get_page_uri($page->ID). '">' .$page->post_title. '</a>';
+              $display .= '</li>';
+              echo $display;
+            }
+            ;?>
+          </ul>
+        </div>
       </div>
     </nav>
     <div class="container">
