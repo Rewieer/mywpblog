@@ -7,24 +7,6 @@
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
           integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
           crossorigin="anonymous">
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111249156-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){
-        dataLayer.push(arguments);
-      }
-
-      var params = JSON.parse('null') || {};
-      var conf = {};
-      if (params.dimensions) {
-        conf["custom_map"] = Object.assign({}, params.dimensions);
-      }
-
-      gtag('js', new Date());
-      gtag('config', 'UA-111249156-1', conf);
-    </script>
     <?php wp_head() ;?>
   </head>
   <body>
